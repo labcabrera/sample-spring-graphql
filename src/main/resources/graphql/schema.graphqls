@@ -24,6 +24,8 @@ type CharacterInfo {
 	raceId: String
 	professionId: String
 	level: Int
+	height: Float
+    weight: Float
 }
 
 type Race {

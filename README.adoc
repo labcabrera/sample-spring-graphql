@@ -15,6 +15,15 @@ http://localhost:8080/graphiql
 ----
 
 ----
+query {
+  races {
+    id
+    name
+  }
+}
+----
+
+----
 mutation CreateCharacter($input: CharacterInfoCreation!) {
   createCharacter(input: $input) {
     id
@@ -36,5 +45,11 @@ Query variables:
     "level": 1
   }
 }
+----
 
+----
+curl 'http://localhost:8080/graphql' -X POST \
+-H 'Accept: application/json' \
+-H 'content-type: application/json' \
+--data-raw '{"query":"query { characters { id name raceId professionId height weight } }"}'
 ----

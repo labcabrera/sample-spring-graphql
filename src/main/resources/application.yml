@@ -11,7 +11,11 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,metrics,info
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
 
 logging:
   level:
