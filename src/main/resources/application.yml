@@ -1,0 +1,25 @@
+spring:
+  graphql:
+    websocket:
+      path: /graphql
+      
+  data:
+    mongodb:
+      database: samples-spring-graphql
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,info
+
+logging:
+  level:
+    org:
+      springframework:
+        web: debug
+        http: debug
+        graphql: debug
+        security: debug
+    reactor:
+      netty: debug

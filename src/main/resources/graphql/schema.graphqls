@@ -1,0 +1,50 @@
+type Query {
+    employees: [Employee]
+    races: [Race]
+    characters: [CharacterInfo]
+}
+
+type Mutation {
+	createCharacter(input: CharacterInfoCreation!): CharacterInfo!
+
+    # restricted
+    updateSalary(input: UpdateSalaryInput!): UpdateSalaryPayload
+}
+
+type Employee {
+    id: ID!
+    name: String
+    # restricted
+    salary: String
+}
+
+type CharacterInfo {
+	id: ID!
+	name: String
+	raceId: String
+	professionId: String
+	level: Int
+}
+
+type Race {
+	id: ID!
+	name: String!
+}
+
+input CharacterInfoCreation {
+	id: ID!
+	name: String!
+	raceId: String!
+	professionId: String!
+	level: Int!
+}
+
+input UpdateSalaryInput {
+    employeeId: ID!
+    salary: String!
+}
+
+type UpdateSalaryPayload {
+    success: Boolean!
+    employee: Employee
+}

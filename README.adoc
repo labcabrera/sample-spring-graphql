@@ -1,0 +1,40 @@
+
+
+http://localhost:8080/graphiql
+
+----
+{
+  characters {
+    id
+    name
+    raceId
+    professionId
+    level
+  }
+}
+----
+
+----
+mutation CreateCharacter($input: CharacterInfoCreation!) {
+  createCharacter(input: $input) {
+    id
+    name
+    raceId
+    professionId
+    level
+  }
+}
+
+Query variables:
+
+{
+  "input": {
+    "id": "test",
+    "name": "Test",
+    "raceId":"test",
+    "professionId": "test",
+    "level": 1
+  }
+}
+
+----
