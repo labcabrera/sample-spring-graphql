@@ -26,6 +26,6 @@ public class CharacterInfo {
 
 	private String professionId;
 
-	private List<CharacterSkill> skills;
+	private List<CharacterSkill> characterSkills;
 
 }

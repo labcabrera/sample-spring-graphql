@@ -27,7 +27,7 @@ class CharacterInfoPopulator implements ApplicationRunner {
 				.raceId("maia")
 				.professionId("alchemist")
 				.level(500)
-				.skills(Arrays.asList(
+				.characterSkills(Arrays.asList(
 					CharacterSkill.builder()
 						.skillId("perception")
 						.level(30)

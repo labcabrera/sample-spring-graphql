@@ -3,6 +3,7 @@ type Query {
     races: [Race]
     professions: [Profession]
     characters: [CharacterInfo]
+    skills: [Skill]
 }
 
 type Mutation {
@@ -22,9 +23,10 @@ type Employee {
 type CharacterInfo {
 	id: ID!
 	name: String
+	level: Int
 	race: Race
 	profession: Profession
-	level: Int
+	skills: [CharacterSkill]
 	height: Float
     weight: Float
 }
@@ -37,6 +39,18 @@ type Race {
 type Profession {
 	id: ID!
 	name: String!
+}
+
+type Skill {
+	id: ID!
+	name: String
+	type: String
+}
+
+type CharacterSkill {
+	skill: Skill
+	level: Int
+	bonus: Int
 }
 
 input CharacterInfoCreation {

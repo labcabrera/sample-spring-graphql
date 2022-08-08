@@ -3,13 +3,19 @@
 http://localhost:8080/graphiql
 
 ----
-{
+query {
   characters {
     id
     name
-    raceId
-    professionId
     level
+    race {
+      id
+      name
+    }
+    profession {
+      id
+      name
+    }
   }
 }
 ----
