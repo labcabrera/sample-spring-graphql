@@ -1,6 +1,7 @@
 type Query {
     employees: [Employee]
     races: [Race]
+    professions: [Profession]
     characters: [CharacterInfo]
 }
 
@@ -21,14 +22,19 @@ type Employee {
 type CharacterInfo {
 	id: ID!
 	name: String
-	raceId: String
-	professionId: String
+	race: Race
+	profession: Profession
 	level: Int
 	height: Float
     weight: Float
 }
 
 type Race {
+	id: ID!
+	name: String!
+}
+
+type Profession {
 	id: ID!
 	name: String!
 }

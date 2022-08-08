@@ -25,5 +25,6 @@ logging:
         http: debug
         graphql: debug
         security: debug
+      github: debug
     reactor:
       netty: debug

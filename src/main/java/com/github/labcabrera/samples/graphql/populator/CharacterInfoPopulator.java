@@ -9,6 +9,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import com.github.labcabrera.samples.graphql.model.CharacterInfo;
+import com.github.labcabrera.samples.graphql.model.CharacterSkill;
 import com.github.labcabrera.samples.graphql.repository.CharacterInfoRepository;
 
 @Component
@@ -24,12 +25,20 @@ class CharacterInfoPopulator implements ApplicationRunner {
 				.id("sauron")
 				.name("Sauron")
 				.raceId("maia")
+				.professionId("alchemist")
 				.level(500)
+				.skills(Arrays.asList(
+					CharacterSkill.builder()
+						.skillId("perception")
+						.level(30)
+						.bonus(230)
+						.build()))
 				.build(),
 			CharacterInfo.builder()
 				.id("gollum")
 				.name("Gollum")
 				.raceId("hobbit")
+				.professionId("rogue")
 				.level(15)
 				.build());
 

@@ -1,5 +1,7 @@
 package com.github.labcabrera.samples.graphql.model;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
@@ -23,5 +25,7 @@ public class CharacterInfo {
 	private String raceId;
 
 	private String professionId;
+
+	private List<CharacterSkill> skills;
 
 }
